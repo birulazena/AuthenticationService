@@ -1,3 +1,11 @@
 spring:
-  application:
-    name: AuthenticationService
+  liquibase:
+    change-log: classpath:db/changelog-master.yml
+  jpa:
+    generate-ddl: false
+    show-sql: true
+security:
+  jwt:
+    secret: ${JWT_SECRET}
+    access-expiration: ${JWT_ACCESS_EXP}
+    refresh-expiration: ${JWT_REFRESH_EXP}
